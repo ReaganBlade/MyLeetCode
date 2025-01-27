@@ -10,7 +10,7 @@ public:
         
         sort(nums.begin(), nums.end());
 
-        unordered_map<int, int> mp;
+        map<int, int> mp;
 
         for (int i : nums){
             mp[i]++;

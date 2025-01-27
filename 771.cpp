@@ -5,7 +5,7 @@ using namespace std;
 class Solution{
 public:
     int numJewelsInStones(string jewels, string stones){
-        unordered_map<char, int> mp;
+        map<char, int> mp;
         for(int i = 0; i < stones.length(); i++){
             mp[stones[i]] += 1;
         }

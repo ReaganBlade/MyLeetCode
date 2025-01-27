@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
     int arithmeticTriplets(vector<int>& nums, int diff) {
-        unordered_map<int, int> pairs;
+        map<int, int> pairs;
         int result = 0;
         int n = nums.size();
         for(int i = 0; i < n; i++){

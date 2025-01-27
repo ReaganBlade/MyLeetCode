@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
     int uniqueMorseRepresentations(vector<string>& words) {
-        unordered_map<char, string> morseCode = {
+        map<char, string> morseCode = {
             {'a', ".-"}, {'b', "-..."}, {'c', "-.-."},
             {'d', "-.."}, {'e', "."}, {'f', "..-."},
             {'g', "--."}, {'h', "...."}, {'i', ".."}, {'j', ".---"},
@@ -15,7 +15,7 @@ public:
             {'w', ".--"}, {'x', "-..-"}, {'y', "-.--"}, {'z', "--.."}
         };
 
-        unordered_map<string, int> result;
+        map<string, int> result;
         for(const string& word: words){
             string curr = "";
             for(char c: word){

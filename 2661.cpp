@@ -40,7 +40,7 @@ class Solution {
 public:
     int firstCompleteIndex(vector<int>& arr, vector<vector<int>>& mat) {
         int m = mat.size(), n = mat[0].size();
-        unordered_map<int, pair<int, int>> pos;
+        map<int, pair<int, int>> pos;
         vector<int> row(m), col(n);
         
         // Store positions of each number

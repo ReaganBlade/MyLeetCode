@@ -6,7 +6,7 @@ class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
         vector<int> counts (nums.size(), 0);
-        unordered_map<int, int> hashMap;
+        map<int, int> hashMap;
 
         vector<int> sortedNums = nums;
         sort(sortedNums.begin(), sortedNums.end());

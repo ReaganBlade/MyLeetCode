@@ -25,7 +25,7 @@ using namespace std;
 
 class Solution{
     int result(vector<int>& nums, int goal){
-        unordered_map<int, int> mpp;
+        map<int, int> mpp;
 
         int left = 0, count = 0;
 

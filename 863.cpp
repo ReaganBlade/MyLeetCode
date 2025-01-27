@@ -12,7 +12,7 @@ struct TreeNode {
 
 
 class Solution {
-    void markParents(TreeNode* root, unordered_map<TreeNode*, TreeNode*> &parent_track, TreeNode* target) {
+    void markParents(TreeNode* root, map<TreeNode*, TreeNode*> &parent_track, TreeNode* target) {
         queue<TreeNode*> queue;
         queue.push(root);
         while(!queue.empty()) {
@@ -31,10 +31,10 @@ class Solution {
     
 public:
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
-        unordered_map<TreeNode*, TreeNode*> parent_track;
+        map<TreeNode*, TreeNode*> parent_track;
         markParents(root, parent_track, target);
         
-        unordered_map<TreeNode*, bool> visited;
+        map<TreeNode*, bool> visited;
         queue<TreeNode*> queue;
         queue.push(target);
         visited[target] = true;

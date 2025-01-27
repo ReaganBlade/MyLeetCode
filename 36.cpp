@@ -5,7 +5,7 @@ using namespace std;
 class Solution{
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        unordered_map<int, vector<int>> m, m_row, m_col;
+        map<int, vector<int>> m, m_row, m_col;
         int count;
 
         vector<int> v(9, 0);
