@@ -1,0 +1,30 @@
+# 2594. Minimum Time to Repair Cars
+from typing import List
+import math
+
+class Solution:
+    def repairCars(self, ranks: List[int], cars: int) -> int:
+        min_rank, max_rank = min(ranks), max(ranks)
+
+        freq = [0] * (max_rank + 1)
+        for rank in ranks:
+            min_rank = min(min_rank, rank)
+            freq[rank] += 1
+
+        low = 1
+        high = min_rank * cars * cars
+
+        while low < high:
+            mid = (low + high) // 2
+            cars_repaired = 0
+
+            for rank in range(1, max_rank + 1):
+                cars_repaired += freq[rank] * int(math.sqrt(mid // rank))
+
+            if cars_repaired >= cars:
+                high = mid
+            else: 
+                low = mid + 1
+
+
+        return low

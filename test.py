@@ -1,15 +1,70 @@
-import matplotlib.pyplot as plt
-# Define technical knowledge requirements by sector (approximate percentages).
-technical_knowledge = {
-    "Sectors": ["IT", "Manufacturing", "Automation", "Agriculture", "Healthcare", "Retail"],
-    "Technical Knowledge Requirement (%)": [80, 70, 75, 20, 50, 40]
-}
+import turtle
 
-# Plot the technical knowledge requirements.
-plt.figure(figsize=(10, 6))
-plt.bar(technical_knowledge["Sectors"], technical_knowledge["Technical Knowledge Requirement (%)"], color="green")
-plt.title("Estimated Technical Knowledge Requirement by Sector")
-plt.xlabel("Sectors")
-plt.ylabel("Requirement (%)")
-plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.show()
+# Setup the screen
+screen = turtle.Screen()
+screen.title("Smile Drawing")
+screen.bgcolor("white")
+
+# Create a turtle
+t = turtle.Turtle()
+t.speed(10)
+t.pensize(3)
+
+# Draw the face (circle)
+t.penup()
+t.goto(0, -100)
+t.pendown()
+t.fillcolor("yellow")
+t.begin_fill()
+t.circle(100)
+t.end_fill()
+
+# Draw the left eye
+t.penup()
+t.goto(-40, 30)
+t.pendown()
+t.fillcolor("white")
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+# Draw the right eye
+t.penup()
+t.goto(40, 30)
+t.pendown()
+t.fillcolor("white")
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+# Draw the pupils
+t.penup()
+t.goto(-40, 35)
+t.pendown()
+t.fillcolor("black")
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+
+t.penup()
+t.goto(40, 35)
+t.pendown()
+t.fillcolor("black")
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+
+# Draw the smile
+t.penup()
+t.goto(-50, -20)
+t.pendown()
+t.pensize(5)
+t.color("black")
+t.setheading(-60)
+t.circle(60, 120)
+
+# Hide the turtle
+t.hideturtle()
+
+# Keep the window open
+turtle.done()

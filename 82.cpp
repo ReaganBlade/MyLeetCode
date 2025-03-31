@@ -24,11 +24,24 @@ struct ListNode {
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        ListNode* nondup = nullptr;
-        ListNode* currPtr = head;
+        ListNode* dummy = new ListNode();
+        ListNode* cur = dummy;
 
-        int val = -1;
-                
+        while(cur){
+
+            if (head -> val != head -> next -> val){
+                cur -> next = head;
+            } else{
+                int prev = head -> val;
+                while(head -> val != prev){
+                    head = head -> next;
+                }
+                cur -> next = head;
+            }
+            cur = cur -> next;
+        }
+
+        return dummy -> next;                
     }
 };
 
